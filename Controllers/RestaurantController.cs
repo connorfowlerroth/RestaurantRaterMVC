@@ -15,5 +15,12 @@ namespace RestaurantRaterMVC.Controllers
         {
             _service = service;
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Index() 
+        {
+            List<RestaurantListItem> restaurants = await _service.GetAllRestaurants();        
+            return View(restaurants);        
+        }
     }
 }
