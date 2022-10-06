@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using RestaurantRaterMVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

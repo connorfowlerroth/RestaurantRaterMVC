@@ -12,6 +12,13 @@ namespace RestaurantRaterMVC.Data
         public double FoodScore { get; set; }
         public double CleanlinessScore { get; set; }
         public double AtmosphereScore { get; set; }
+        public double Score 
+        {
+            get
+            {
+                return (FoodScore + CleanlinessScore + AtmosphereScore) / 3;
+            }
+        }
 
         public virtual RestaurantEntity Restaurant { get; set; }
         

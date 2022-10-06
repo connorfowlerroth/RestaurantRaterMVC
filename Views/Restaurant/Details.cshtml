@@ -1,0 +1,79 @@
+@model RestaurantRaterMVC.Models.Restaurant.RestaurantDetail
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h1>@Model.Name</h1>
+<h4>Restaurant Details</h4>
+<hr />
+<d1 class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Id)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Id)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Score)
+    </dt>
+    <dd class="col-sm-10">
+        @if (Model.Score > 0)
+        {
+        @Html.DisplayFor(model => model.Score)
+        }
+        else
+        {
+            <span>No Ratings yet</span>
+        }
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.AverageFoodScore)
+    </dt>
+    <dd class="col-sm-10">
+        @if (Model.AverageFoodScore > 0)
+        {
+        @Html.DisplayFor(model => model.AverageFoodScore)
+        }
+        else
+        {
+            <span>No Ratings yet</span>
+        }
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.AverageCleanlinessScore)
+    </dt>
+    <dd class="col-sm-10">
+        @if (Model.AverageCleanlinessScore > 0)
+        {
+        @Html.DisplayFor(model => model.AverageCleanlinessScore)
+        }
+        else
+        {
+            <span>No Ratings yet</span>
+        }
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.AverageAtmosphereScore)
+    </dt>
+    <dd class="col-sm-10">
+        @if (Model.AverageAtmosphereScore > 0)
+        {
+        @Html.DisplayFor(model => model.AverageAtmosphereScore)
+        }
+        else
+        {
+            <span>No Ratings yet</span>
+        }
+    </dd>
+</d1>
+<div>
+    <a asp-action="Edit" asp-route-id=@Model.Id>Edit</a>
+    <a asp-action="Index">Back to List</a>
+</div>
